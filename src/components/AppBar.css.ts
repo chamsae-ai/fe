@@ -71,48 +71,6 @@ export const sideEnd = style({
 
 export const centerBrand = style([brandBase, { flexShrink: 0 }])
 
-/**
- * 붓 자국의 모양이다. 왼쪽에서 눌러 긋고 오른쪽으로 서서히 빼며, 양 끝은
- * 둥글게 맺는다. 색은 모양에서 떼어 두어야 계약의 색을 그대로 쓸 수 있다.
- * 그래서 그림을 마스크로 쓰고 색은 배경으로 준다.
- */
-const BRUSH =
-  "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' preserveAspectRatio='none'%3E%3Cpath d='M9 2C40 3 70 6 96 8.5A2.5 2.5 0 0 1 96 13.5C70 16 40 17 9 18A8 8 0 0 1 9 2Z'/%3E%3C/svg%3E\")"
-
-/**
- * 결과 화면의 이름 밑에 긋는 붓 자국이다.
- *
- * 이 화면에서는 표식을 빼고 이름만 남긴다. 제목 옆 참새가 상태를 말하고
- * 있어서 같은 그림이 한 화면에 두 번 나온다.
- *
- * 홈의 강조와 같이 글자 뒤에 깔아 아랫부분에 겹친다. 반듯한 줄을 밑에 그으면
- * 누를 수 있는 것으로 보이는데 이 이름은 누르는 것이 아니다.
- */
-export const brushUnderline = style({
-  position: 'relative',
-  display: 'inline-block',
-  isolation: 'isolate',
-  selectors: {
-    '&::before': {
-      content: '',
-      position: 'absolute',
-      left: '-0.12em',
-      right: '-0.14em',
-      bottom: '-0.08em',
-      height: '0.44em',
-      zIndex: -1,
-      backgroundColor: vars.color.brand.clay,
-      maskImage: BRUSH,
-      WebkitMaskImage: BRUSH,
-      maskSize: '100% 100%',
-      WebkitMaskSize: '100% 100%',
-      maskRepeat: 'no-repeat',
-      WebkitMaskRepeat: 'no-repeat',
-      transform: 'rotate(-1.4deg)',
-    },
-  },
-})
-
 export const actions = style({
   marginLeft: 'auto',
   display: 'flex',

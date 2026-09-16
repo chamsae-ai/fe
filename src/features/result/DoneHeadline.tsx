@@ -1,5 +1,4 @@
 import { RESULT } from '../../copy/strings'
-import { PerchedSparrow } from './ResultSparrow'
 import * as styles from './DoneHeadline.css'
 
 /**
@@ -12,10 +11,5 @@ import * as styles from './DoneHeadline.css'
  * 알려야 해서 `JobOutcome`이 대신 들어간다.
  */
 export function DoneHeadline() {
-  return (
-    <h1 className={styles.title}>
-      {RESULT.done}
-      <PerchedSparrow />
-    </h1>
-  )
+  return <h1 className={styles.title}>{RESULT.done}</h1>
 }

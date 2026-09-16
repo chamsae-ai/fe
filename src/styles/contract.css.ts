@@ -26,8 +26,6 @@ export const vars = createThemeContract({
       beak: null,
       /** 넓은 면에 쓰는 갈색. */
       deep: null,
-      /** 붓 자국에 쓰는 밝은 갈색. */
-      clay: null,
     },
     text: {
       primary: null,

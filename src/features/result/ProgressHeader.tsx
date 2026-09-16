@@ -4,7 +4,6 @@ import { ClockIcon } from '../../components/icons'
 import { PROGRESS, STEPS } from '../../copy/strings'
 import { clock } from '../../domain/format'
 import { claimProgress, processingStage } from '../../domain/job'
-import { FlyingSparrow } from './ResultSparrow'
 import * as styles from './ProgressHeader.css'
 
 /** 이 시간을 넘기면 오래 걸린다고 알린다. 대기열에서 기다린 시간은 세지 않는다. */
@@ -31,10 +30,7 @@ export function ProgressHeader({ job }: { job: JobResponse }) {
     <div className={styles.header}>
       {counted ? (
         <>
-          <h1 className={styles.title}>
-            {PROGRESS.claimsFound(progress.total)}
-            <FlyingSparrow />
-          </h1>
+          <h1 className={styles.title}>{PROGRESS.claimsFound(progress.total)}</h1>
           <ProgressBar
             done={progress.settled}
             total={progress.total}
@@ -47,10 +43,7 @@ export function ProgressHeader({ job }: { job: JobResponse }) {
         </>
       ) : (
         <>
-          <h1 className={styles.title}>
-            {STEPS[step]?.headline}
-            <FlyingSparrow />
-          </h1>
+          <h1 className={styles.title}>{STEPS[step]?.headline}</h1>
           <StepBar current={step} />
           <p className={styles.meta}>{timeLine(job)}</p>
         </>
