@@ -1,4 +1,5 @@
 import type { JobResponse } from '../../api/types'
+import { LOGO_PX } from '../../components/Logo'
 import { Sparrow } from '../../components/Sparrow'
 import { finalVerdict, isTerminalStatus } from '../../domain/job'
 import * as styles from './ResultSparrow.css'
@@ -10,18 +11,24 @@ import * as styles from './ResultSparrow.css'
  * 이름 글씨를 두지 않는다. 표식만으로 서비스가 드러나고, 글씨까지 두면
  * 상태를 말하는 그림 옆에 안 변하는 이름이 붙어 어느 쪽을 봐야 할지 흐려진다.
  *
+ * 크기는 홈 상단바의 표식보다 조금 크다. 상단바 가운데에 이것 하나만 있어서
+ * 같은 크기로 두면 비어 보인다. 두 모습을 같은 크기로 둬야 상태가 바뀔 때
+ * 표식이 커졌다 작아지지 않는다.
+ *
  * 세 모습이다.
  *
  * - 분석하는 동안 난다.
  * - 판정이 나온 주장이 하나라도 있으면 쪽지를 물고 앉는다.
  * - 하나도 없으면 빈 부리로 앉는다. 아무것도 물어 오지 못한 것이다.
  */
+const MARK_PX = Math.round(LOGO_PX.sm * 1.15)
+
 export function ResultMark({ job }: { job: JobResponse | undefined }) {
   if (job === undefined || !isTerminalStatus(job.status)) {
     return (
       <span className={styles.path} aria-hidden>
         <span className={styles.flying}>
-          <Sparrow size={32} flying wingClassName={styles.wing} />
+          <Sparrow size={MARK_PX} flying wingClassName={styles.wing} />
         </span>
       </span>
     )
@@ -29,7 +36,7 @@ export function ResultMark({ job }: { job: JobResponse | undefined }) {
 
   return (
     <span className={styles.perched} aria-hidden>
-      <Sparrow size={32} carrying={broughtBack(job)} />
+      <Sparrow size={MARK_PX} carrying={broughtBack(job)} />
     </span>
   )
 }

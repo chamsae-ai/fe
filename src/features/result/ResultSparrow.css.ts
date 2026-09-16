@@ -16,10 +16,15 @@ const drift = keyframes({
   '100%': { transform: 'translateX(22px)', opacity: 0 },
 })
 
-/** 위아래로 얕게 뜬다. 한 칸이 크면 표식이 화면에서 튀어 보인다. */
+/**
+ * 위아래로 얕게 뜬다. 한 칸이 크면 표식이 화면에서 튀어 보인다.
+ *
+ * 제자리를 가운데에 두고 위아래로 같은 거리를 간다. 제자리에서 위로만 뜨면
+ * 상단바 위쪽에는 바짝 붙고 아래쪽은 그만큼 비어 한쪽으로 쏠린다.
+ */
 const hover = keyframes({
-  '0%, 100%': { transform: 'translateY(0)' },
-  '50%': { transform: 'translateY(-6px)' },
+  '0%, 100%': { transform: 'translateY(2px)' },
+  '50%': { transform: 'translateY(-2px)' },
 })
 
 /** 날개를 접었다 편다. 표식의 획 하나라 각도만 바꾼다. */
