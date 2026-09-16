@@ -201,11 +201,18 @@ export const feedback = style({
   },
 })
 
-/** 조직 주소가 정해지기 전이다. 눌러도 갈 곳이 없어 링크로 만들지 않는다. */
-export const repoPlaceholder = style({
+/**
+ * 공개 저장소로 가는 길이다. 아이콘만 두어 옆의 피드백 글자보다 물러나 있게
+ * 하고, 가리키면 본문 색까지 올라와 누를 수 있다는 것을 알린다.
+ */
+export const repo = style({
   display: 'inline-grid',
   placeItems: 'center',
-  color: vars.color.text.disabled,
+  color: vars.color.text.tertiary,
+  transition: `color ${vars.motion.duration.fast} ${vars.motion.easing.standard}`,
+  selectors: {
+    '&:hover': { color: vars.color.text.primary },
+  },
 })
 
 /**
