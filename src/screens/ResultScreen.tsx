@@ -93,15 +93,15 @@ export function ResultScreen() {
         <div className={styles.layout}>
           <div className={styles.main}>
             {terminalStatus === null ? (
-              <div className={`${styles.orderHeadline} ${styles.section}`}>
+              <div className={`${styles.orderHeadline} ${styles.section} ${styles.headlineTight}`}>
                 <ProgressHeader job={data} />
               </div>
             ) : outcome !== null ? (
-              <div className={`${styles.orderHeadline} ${styles.section}`}>
+              <div className={`${styles.orderHeadline} ${styles.section} ${styles.headlineTight}`}>
                 <JobOutcome outcome={outcome} />
               </div>
             ) : (
-              <div className={`${styles.orderHeadline} ${styles.section}`}>
+              <div className={`${styles.orderHeadline} ${styles.section} ${styles.headlineTight}`}>
                 <DoneHeadline />
               </div>
             )}
