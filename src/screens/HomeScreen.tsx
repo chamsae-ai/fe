@@ -8,6 +8,7 @@ import { MockScenarioPicker } from '../api/mock/ScenarioPicker'
 import { VideoUnavailableError } from '../api/preview'
 import { useSubmitAnalysis, useVideoPreview } from '../api/queries'
 import { clearAnalysis, readAnalysis, writeAnalysis } from '../app/analysis'
+import { REPO_URL } from '../app/site'
 import { AppBar, Banner, Button, Card, Logo, Skeleton, TextField } from '../components'
 import { InstallEntry } from '../features/install/InstallEntry'
 import { ShareButton } from '../features/share/ShareButton'
@@ -217,9 +218,15 @@ export function HomeScreen() {
               {HOME.feedback}
             </a>
           )}
-          <span className={styles.repoPlaceholder} title={FOOTER.github}>
+          <a
+            className={styles.repo}
+            href={REPO_URL}
+            target="_blank"
+            rel="noreferrer noopener"
+            title={FOOTER.github}
+          >
             <GithubIcon size={36} label={FOOTER.github} />
-          </span>
+          </a>
         </div>
       </footer>
     </div>

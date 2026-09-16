@@ -6,7 +6,7 @@
 
 공개 상태이고 길이가 3분 이하인 YouTube 영상이다. 한국어 영상에 최적화되어 있으나 다른 언어도 거절하지 않는다.
 
-**Shorts로 한정하지 않는다.** 이전 기준은 Shorts만 지원한다고 적었으나, 실제 구현은 프런트엔드와 서버 어디에서도 Shorts 여부를 확인하지 않는다. 길이 제한이 짧은 영상만 받는 목적을 이미 채운다. 근거는 [M-02](https://github.com/Dynamic-Juo/docs/blob/main/project/mvp-review.md)에 있다.
+**Shorts로 한정하지 않는다.** 이전 기준은 Shorts만 지원한다고 적었으나, 실제 구현은 프런트엔드와 서버 어디에서도 Shorts 여부를 확인하지 않는다. 길이 제한이 짧은 영상만 받는 목적을 이미 채운다. 근거는 [M-02](https://github.com/chamsae-ai/docs/blob/main/project/mvp-review.md)에 있다.
 
 ## 확인 단계
 
@@ -44,7 +44,7 @@ oEmbed는 영상 길이를 주지 않는다. 길이 확인은 서버 몫이다.
 
 ## 서버가 보는 것
 
-기준은 [API 계약](https://github.com/Dynamic-Juo/be/blob/main/docs/api-reference.md)이다.
+기준은 [API 계약](https://github.com/chamsae-ai/be/blob/main/docs/api-reference.md)이다.
 
 다운로드 전에 metadata로 공개 상태, 연령 제한, 양의 길이, 기본 180초 상한, 실시간 여부를 확인한다. 여기서 걸리면 접수는 이미 끝난 뒤라 `job.error`로 돌아오고 화면에는 분석 실패로 나타난다.
 

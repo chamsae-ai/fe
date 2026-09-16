@@ -35,7 +35,7 @@ manifest와 아이콘은 플러그인이 자동으로 목록에 넣으며 이 �
 
 ## 캐시하지 않는 이유
 
-[M-05](https://github.com/Dynamic-Juo/docs/blob/main/project/mvp-review.md)에서 서비스 워커 기반 오프라인 캐시와 별도 업데이트 처리를 제외했다. 근거는 둘이다.
+[M-05](https://github.com/chamsae-ai/docs/blob/main/project/mvp-review.md)에서 서비스 워커 기반 오프라인 캐시와 별도 업데이트 처리를 제외했다. 근거는 둘이다.
 
 영상 수집, 모델 분석, 근거 검색이 모두 서버를 거쳐야 해서 오프라인에서 할 수 있는 일이 없다.
 
