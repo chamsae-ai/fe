@@ -14,6 +14,10 @@ import { vars } from '../styles/contract.css'
  * 새로 그리지 않고 같은 몸에 날개와 물고 있는 것만 얹는다. 다른 새처럼 보이면
  * 같은 서비스로 읽히지 않는다.
  */
+/** 몸통 윤곽이다. 음영이 같은 선을 한 번 더 그려서 상수로 둔다. */
+const BODY =
+  'M60 14c-27 0-46 19-46 44 0 13 4 26 14 36l-8 16 22-9c6 2 12 3 18 3 27 0 46-19 46-46S87 14 60 14z'
+
 export function Sparrow({
   size = 28,
   variant = 'full',
@@ -93,6 +97,20 @@ export function Sparrow({
         </g>
       ) : null}
 
+      {/*
+        몸통 아래에 깔리는 갈색 음영이다. 같은 윤곽을 조금 내려 그려 아래쪽
+        가장자리만 드러난다. 상자에 그림자를 주면 표식이 아니라 네모가 뜬다.
+      */}
+      <path
+        d={BODY}
+        transform="translate(0 5)"
+        fill="none"
+        stroke={vars.color.brand.clay}
+        strokeWidth={9}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+
       <g
         fill="none"
         stroke="currentColor"
@@ -100,10 +118,7 @@ export function Sparrow({
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <path
-          d="M60 14c-27 0-46 19-46 44 0 13 4 26 14 36l-8 16 22-9c6 2 12 3 18 3 27 0 46-19 46-46S87 14 60 14z"
-          fill={vars.color.surface.raised}
-        />
+        <path d={BODY} fill={vars.color.surface.raised} />
         <path d="M22 60c10 0 14-14 24-16" />
       </g>
       <circle cx="70" cy="48" r="4.5" fill="currentColor" />
