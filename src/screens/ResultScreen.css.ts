@@ -75,6 +75,14 @@ export const section = style({
   },
 })
 
+/**
+ * 머리말 블록이다. 아래 여백을 지운다. 바로 다음 블록이 제 위쪽 여백을 가지고
+ * 있어 둘이 겹치면 제목이 제 내용에서 멀어진다.
+ */
+export const headlineTight = style({
+  paddingBottom: 0,
+})
+
 /** 넓은 화면에만 두는 자리. 감싼 상자째 빼야 여백이 남지 않는다. */
 export const desktopOnly = style({
   display: 'none',

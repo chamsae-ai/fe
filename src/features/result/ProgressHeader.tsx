@@ -16,6 +16,9 @@ const LONG_RUNNING_SEC = 5 * 60
  * 확정 전에는 네 단계 중 어디인지를 칸으로 보여주고, 확정된 뒤에는 주장
  * 검증 진행률로 바뀐다. 진행률의 분모는 주장 수다. 미디어 조작 2건은 더하지
  * 않는다. 축이 다르다.
+ *
+ * 둘 다 제목 아래에 둔다. 한쪽을 제목 위에 두면 주장 수가 확정되는 순간 띠가
+ * 위에서 아래로 옮겨 가 화면이 한 번 흔들린다.
  */
 export function ProgressHeader({ job }: { job: JobResponse }) {
   const verification = job.result?.claim_verification
@@ -40,8 +43,8 @@ export function ProgressHeader({ job }: { job: JobResponse }) {
         </>
       ) : (
         <>
-          <StepBar current={step} />
           <h1 className={styles.title}>{STEPS[step]?.headline}</h1>
+          <StepBar current={step} />
           <p className={styles.meta}>{timeLine(job)}</p>
         </>
       )}

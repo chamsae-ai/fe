@@ -10,6 +10,7 @@ import { ClaimSection } from '../features/result/ClaimSection'
 import { FinalSummary } from '../features/result/FinalSummary'
 import { DoneHeadline } from '../features/result/DoneHeadline'
 import { JobOutcome } from '../features/result/JobOutcome'
+import { ResultMark } from '../features/result/ResultMark'
 import { outcomeOf } from '../features/result/outcome'
 import { MediaPanel } from '../features/result/MediaPanel'
 import { ProgressHeader } from '../features/result/ProgressHeader'
@@ -72,7 +73,7 @@ export function ResultScreen() {
 
   return (
     <div className={styles.page}>
-      <AppBar back>
+      <AppBar back center={<ResultMark job={data} />}>
         {data === undefined ? null : terminalStatus === null ? (
           <Chip emphasis="dashed">{PROGRESS.elapsed(clock(data.elapsed_sec))}</Chip>
         ) : canRetry(data) ? (
@@ -92,15 +93,15 @@ export function ResultScreen() {
         <div className={styles.layout}>
           <div className={styles.main}>
             {terminalStatus === null ? (
-              <div className={`${styles.orderHeadline} ${styles.section}`}>
+              <div className={`${styles.orderHeadline} ${styles.section} ${styles.headlineTight}`}>
                 <ProgressHeader job={data} />
               </div>
             ) : outcome !== null ? (
-              <div className={`${styles.orderHeadline} ${styles.section}`}>
+              <div className={`${styles.orderHeadline} ${styles.section} ${styles.headlineTight}`}>
                 <JobOutcome outcome={outcome} />
               </div>
             ) : (
-              <div className={`${styles.orderHeadline} ${styles.section}`}>
+              <div className={`${styles.orderHeadline} ${styles.section} ${styles.headlineTight}`}>
                 <DoneHeadline />
               </div>
             )}

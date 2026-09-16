@@ -12,7 +12,7 @@ type Props = {
   action?: ReactNode
   /** 사용자가 바로 알아야 하는 실패는 낭독기에도 알린다. */
   assertive?: boolean
-  /** 주면 닫기 단추가 생긴다. 사용자가 치울 수 있는 안내에만 준다. */
+  /** 주면 닫기 버튼가 생긴다. 사용자가 치울 수 있는 안내에만 준다. */
   onDismiss?: () => void
   dismissLabel?: string
 }

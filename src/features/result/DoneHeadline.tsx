@@ -11,5 +11,10 @@ import * as styles from './DoneHeadline.css'
  * 알려야 해서 `JobOutcome`이 대신 들어간다.
  */
 export function DoneHeadline() {
-  return <h1 className={styles.title}>{RESULT.done}</h1>
+  return (
+    <h1 className={styles.title}>
+      <span className={styles.brush}>{RESULT.done.mark}</span>
+      {RESULT.done.rest}
+    </h1>
+  )
 }

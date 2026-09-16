@@ -33,7 +33,13 @@ export function ResultActions({
   return (
     <div className={styles.actions}>
       {finished && canRetry(job) ? (
-        <Button variant="outline" size="sm" fullWidth disabled={pending} onClick={retry}>
+        <Button
+          variant="outline"
+          fullWidth
+          className={styles.retry}
+          disabled={pending}
+          onClick={retry}
+        >
           {pending ? RESULT.retrying : RESULT.retry}
         </Button>
       ) : null}
