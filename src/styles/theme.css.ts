@@ -22,6 +22,7 @@ createGlobalTheme(':root', vars, {
       cream: brand.cream,
       beak: brand.beak,
       deep: brand.deep,
+      clay: brand.clay,
     },
     text: {
       primary: gray[900],
