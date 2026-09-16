@@ -38,6 +38,8 @@ export const brand = {
   beak: '#f2b233',
   /** 카드 바탕처럼 넓은 면에 쓰는 갈색. */
   deep: '#a8703b',
+  /** 붓 자국에 쓰는 밝은 갈색. `deep`보다 맑고 `beak`보다 붉다. */
+  clay: '#df8027',
 } as const
 
 /**

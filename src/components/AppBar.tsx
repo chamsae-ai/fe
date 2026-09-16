@@ -17,9 +17,12 @@ import * as styles from './AppBar.css'
  * 공유는 늘 있고 설치는 기기와 설치 여부에 따라 나타났다 사라진다. 공유를
  * 맨 끝에 두어야 설치가 없는 기기에서도 같은 자리에 남는다.
  *
- * 돌아가는 길이 있는 화면에서는 표식을 가운데에 둔다. 양옆을 같은 비율로
+ * 돌아가는 길이 있는 화면에서는 이름을 가운데에 둔다. 양옆을 같은 비율로
  * 잡아 내용 길이와 상관없이 가운데가 흔들리지 않게 한다. 결과 화면을 공유하거나
  * 갈무리했을 때 어느 서비스인지 남아야 한다.
+ *
+ * 여기서는 표식 없이 이름만 두고 아래에 붓 자국을 긋는다. 제목 옆 참새가
+ * 상태를 말하고 있어 표식까지 두면 같은 그림이 한 화면에 두 번 나온다.
  *
  * 작업 상태는 여기에 적지 않는다. 진행 중에는 본문 제목이, 끝난 뒤에는 요약
  * 카드의 칩이 같은 말을 하고 있다. 띠는 스크롤하면 사라져서 남겨 둘 값도 없다.
@@ -38,8 +41,7 @@ export function AppBar({ back = false, children }: { back?: boolean; children?: 
             </Link>
           </div>
           <span className={styles.centerBrand}>
-            <Logo />
-            {HOME.title}
+            <span className={styles.brushUnderline}>{HOME.title}</span>
           </span>
           <div className={`${styles.side} ${styles.sideEnd}`}>{children}</div>
         </>
