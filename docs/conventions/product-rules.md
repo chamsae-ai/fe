@@ -2,7 +2,7 @@
 
 이 제품의 도메인에서만 성립하는 코드 규칙이다. 어느 프로젝트에나 적용하는 일반 기준은 [프런트엔드 코드 기준](code-style.md)에 있다.
 
-여기 있는 규칙은 대부분 [Dynamic-Juo/docs](https://github.com/Dynamic-Juo/docs)에서 내린 결정이 코드에서 깨지지 않게 막는 장치다. 규칙을 바꾸려면 근거가 된 결정을 먼저 바꾼다.
+여기 있는 규칙은 대부분 [chamsae-ai/docs](https://github.com/chamsae-ai/docs)에서 내린 결정이 코드에서 깨지지 않게 막는 장치다. 규칙을 바꾸려면 근거가 된 결정을 먼저 바꾼다.
 
 ## 도메인 용어를 코드에 그대로 쓴다
 
@@ -37,7 +37,7 @@ verdict: 'supported' | 'refuted' | 'insufficient' | null
 
 근거 부족은 검증이 끝나서 나온 판정이다. 그 주장의 처리 상태는 `completed`다. 실패가 아니다.
 
-근거는 [U-03](https://github.com/Dynamic-Juo/docs/blob/main/project/mvp-review.md)이다.
+근거는 [U-03](https://github.com/chamsae-ai/docs/blob/main/project/mvp-review.md)이다.
 
 ## 조작이 없다고 단정하는 표현을 쓰지 않는다
 
@@ -56,7 +56,7 @@ const MANIPULATION_LABEL = {
 
 라벨을 줄이지 않는다. `뚜렷한 조작 징후 없음`을 `징후 없음`으로 줄이면 단정에 가까워진다.
 
-근거는 [U-04](https://github.com/Dynamic-Juo/docs/blob/main/project/mvp-review.md)다.
+근거는 [U-04](https://github.com/chamsae-ai/docs/blob/main/project/mvp-review.md)다.
 
 ## 분석한 것과 업로더가 적은 것을 구분한다
 
@@ -70,7 +70,7 @@ const MANIPULATION_LABEL = {
 
 영상 전체를 분석해 AI 생성 여부를 가리는 탐지는 MVP에서 제외한다. 음성 합성도 제외한다. 안 하는 분석은 항목을 만들어 두고 `분석 불가`로 표시하지 않는다. 항목이 있으면 분석했다가 실패한 것으로 읽히는데 실제로는 하지 않았다.
 
-근거는 [T-06](https://github.com/Dynamic-Juo/docs/pull/7#discussion_r3991306606)이다.
+근거는 [T-06](https://github.com/chamsae-ai/docs/pull/7#discussion_r3991306606)이다.
 
 ## 조회 자격을 주소에 두지 않는다
 
@@ -88,7 +88,7 @@ const MANIPULATION_LABEL = {
 
 서버 응답에 점수가 들어와도 화면으로 넘기지 않는다.
 
-근거는 [U-03](https://github.com/Dynamic-Juo/docs/blob/main/project/mvp-review.md)이다.
+근거는 [U-03](https://github.com/chamsae-ai/docs/blob/main/project/mvp-review.md)이다.
 
 ## 두 분석을 하나로 합치지 않는다
 
@@ -96,7 +96,7 @@ const MANIPULATION_LABEL = {
 
 두 결과를 담는 자료 구조를 분리한다. 한쪽이 없어도 다른 쪽을 그릴 수 있어야 한다.
 
-근거는 [M-01](https://github.com/Dynamic-Juo/docs/blob/main/project/mvp-review.md)이다.
+근거는 [M-01](https://github.com/chamsae-ai/docs/blob/main/project/mvp-review.md)이다.
 
 ## 주장 수가 확정되기 전에 숫자를 표시하지 않는다
 
@@ -146,7 +146,7 @@ const completedCount = claims.filter(c => c.status === 'completed').length
 
 주 사용 언어가 한국어가 아닌 경우도 분석을 중단하지 않는다. 신뢰도가 떨어질 수 있다는 안내만 덧붙인다.
 
-근거는 [R-10](https://github.com/Dynamic-Juo/docs/blob/main/project/prd.md)과 [U-05](https://github.com/Dynamic-Juo/docs/blob/main/project/mvp-review.md)다.
+근거는 [R-10](https://github.com/chamsae-ai/docs/blob/main/project/prd.md)과 [U-05](https://github.com/chamsae-ai/docs/blob/main/project/mvp-review.md)다.
 
 ## 검토할 때 보는 것
 
