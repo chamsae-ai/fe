@@ -42,7 +42,10 @@ export function ShareButton() {
 async function share(setNotice: (value: Notice) => void): Promise<void> {
   if (typeof navigator.share === 'function') {
     try {
-      await navigator.share({ title: SHARE.title, text: SHARE.text, url: SITE_URL })
+      // `text`는 넘기지 않는다. 카카오톡은 주소로 카드를 만들고 `text`를 따로
+      // 한 통 더 보내서, 같은 말이 카드 아래에 한 번 더 붙는다. 소개 문구는
+      // `index.html`의 `og:description`이 카드 안에서 말한다.
+      await navigator.share({ title: SHARE.title, url: SITE_URL })
       return
     } catch (error) {
       // 사용자가 닫은 것이면 여기서 끝낸다.
