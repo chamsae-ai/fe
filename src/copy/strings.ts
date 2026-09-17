@@ -167,13 +167,12 @@ export const FEATURES = [
 ] as const
 
 /**
- * 공유 진입점 문구다. 기기 공유 창이 받는 제목과 설명, 복사했을 때의 알림을
- * 함께 둔다.
+ * 공유 진입점 문구다. 기기 공유 창이 받는 제목과 복사했을 때의 알림을 둔다.
+ * 링크를 여는 쪽이 보는 소개 문구는 `index.html`의 `og:description`에 있다.
  */
 export const SHARE = {
   label: '공유하기',
   title: '참새 AI',
-  text: '그 영상, 참인지 새빨간 거짓인지 확인해 보세요.',
   copied: '링크를 복사했어요',
   failed: '복사하지 못했어요',
 } as const
