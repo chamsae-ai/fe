@@ -70,7 +70,7 @@ const MANIPULATION_LABEL = {
 
 영상 전체를 분석해 AI 생성 여부를 가리는 탐지는 MVP에서 제외한다. 음성 합성도 제외한다. 안 하는 분석은 항목을 만들어 두고 `분석 불가`로 표시하지 않는다. 항목이 있으면 분석했다가 실패한 것으로 읽히는데 실제로는 하지 않았다.
 
-근거는 [T-06](https://github.com/chamsae-ai/docs/pull/7#discussion_r3991306606)이다.
+근거는 [T-06](https://github.com/chamsae-ai/docs/blob/main/project/mvp-review.md#3-구현-방식과-기술-검증)이다.
 
 ## 조회 자격을 주소에 두지 않는다
 
