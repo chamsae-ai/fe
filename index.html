@@ -15,7 +15,30 @@
       name="description"
       content="오늘 본 영상, 그냥 넘기지 마세요. 참새가 대신 진짜 소식을 물어올게요."
     />
-    <title>참새 AI - 영상 조작 징후를 확인해보아요</title>
+    <title>참새 AI · 영상 속 주장과 조작 징후를 확인합니다</title>
+
+    <!--
+      메신저와 SNS가 링크를 카드로 그릴 때 읽는 값이다. 이 값이 없으면
+      카카오톡은 제목만 가져오고 설명 자리에 자기 기본 문구를 넣는다.
+
+      og:image는 절대 주소여야 한다. 링크를 읽는 쪽은 우리 문서의 위치를
+      모른 채 이 주소만 받는다. 대표 주소로 고정해 미리보기 배포에서
+      공유해도 같은 그림이 가게 한다.
+    -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="참새 AI" />
+    <meta property="og:title" content="참새 AI · 영상 속 주장과 조작 징후를 확인합니다" />
+    <meta
+      property="og:description"
+      content="오늘 본 영상, 그냥 넘기지 마세요. 참새가 대신 진짜 소식을 물어올게요."
+    />
+    <meta property="og:url" content="https://chamsae-ai.vercel.app/" />
+    <meta property="og:image" content="https://chamsae-ai.vercel.app/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="참새 표식과 '그 영상, 참이야? 새빨간 거짓이야?' 문구" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body>
     <div id="root"></div>
